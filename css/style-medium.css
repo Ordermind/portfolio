@@ -1,0 +1,83 @@
+/*
+  Strata by HTML5 UP
+  html5up.net | @n33co
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+/* Basic */
+/* line 15, ../sass/style-medium.scss */
+h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
+  display: none;
+}
+
+/* List */
+/* line 25, ../sass/style-medium.scss */
+ul.icons li .icon {
+  font-size: 1.25em;
+}
+
+/* Header */
+/* line 34, ../sass/style-medium.scss */
+#header {
+  background-attachment: scroll;
+  background-position: top left,   center center;
+  background-size: auto,     cover;
+  left: auto;
+  padding: 6em 4em;
+  position: relative;
+  text-align: center;
+  top: auto;
+  width: 100%;
+}
+/* line 45, ../sass/style-medium.scss */
+#header h1, #header h2 {
+  font-size: 1.75em;
+}
+/* line 48, ../sass/style-medium.scss */
+#header h1 br, #header h2 br {
+  display: inline;
+}
+
+/* Footer */
+/* line 56, ../sass/style-medium.scss */
+#footer {
+  background-attachment: scroll;
+  background-color: #1f1815;
+  background-image: url("images/overlay.png"), url("../images/bg.jpg");
+  background-position: top left,             bottom center;
+  background-repeat: repeat,             no-repeat;
+  background-size: auto,               cover;
+  bottom: auto;
+  left: auto;
+  padding: 4em 4em 6em 4em;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+/* line 70, ../sass/style-medium.scss */
+#footer .frameworks {
+  display: block;
+}
+/* line 74, ../sass/style-medium.scss */
+#footer .icons {
+  margin: 0 0 1em 0;
+}
+/* line 78, ../sass/style-medium.scss */
+#footer .copyright {
+  margin: 0 0 1em 0;
+}
+/* line 81, ../sass/style-medium.scss */
+#footer .copyright li {
+  border-left-width: 1px;
+  display: inline-block;
+  line-height: 1em;
+  margin-left: 0.75em;
+  padding-left: 0.75em;
+}
+
+/* Main */
+/* line 93, ../sass/style-medium.scss */
+#main {
+  margin: 0;
+  padding: 4em;
+  width: 100%;
+}

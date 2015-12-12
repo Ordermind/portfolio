@@ -1,0 +1,84 @@
+/*
+  Strata by HTML5 UP
+  html5up.net | @n33co
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+/* List */
+/* line 15, ../sass/style-xsmall.scss */
+ul.actions {
+  margin: 0 0 2em 0;
+}
+/* line 18, ../sass/style-xsmall.scss */
+ul.actions li {
+  display: block;
+  padding: 1em 0 0 0;
+  text-align: center;
+  width: 100%;
+}
+/* line 24, ../sass/style-xsmall.scss */
+ul.actions li:first-child {
+  padding-top: 0;
+}
+/* line 28, ../sass/style-xsmall.scss */
+ul.actions li > * {
+  margin: 0 !important;
+  width: 100%;
+}
+/* line 33, ../sass/style-xsmall.scss */
+ul.actions li > *.icon:before {
+  margin-left: -2em;
+}
+/* line 41, ../sass/style-xsmall.scss */
+ul.actions.small li {
+  padding: 0.5em 0 0 0;
+}
+/* line 44, ../sass/style-xsmall.scss */
+ul.actions.small li:first-child {
+  padding-top: 0;
+}
+
+/* Header */
+/* line 54, ../sass/style-xsmall.scss */
+#header {
+  padding: 4.5em 1.5em;
+}
+/* line 58, ../sass/style-xsmall.scss */
+#header h1 br, #header h2 br {
+  display: none;
+}
+
+/* line 65, ../sass/style-xsmall.scss */
+header.major h2 {
+  float: none;
+  margin-bottom: 0.3em;
+}
+
+/* line 71, ../sass/style-xsmall.scss */
+.content-type-project h1 {
+  float: none;
+  margin-bottom: 0.3em;
+}
+
+/* Main */
+/* line 77, ../sass/style-xsmall.scss */
+#main .platforms {
+  padding-top: 0;
+}
+/* line 81, ../sass/style-xsmall.scss */
+#main .content .view-all-projects {
+  border-top: 0;
+}
+/* line 85, ../sass/style-xsmall.scss */
+#main .projects .row article {
+  width: 100%;
+}
+
+/* Footer */
+/* line 94, ../sass/style-xsmall.scss */
+#footer .copyright li {
+  border-left-width: 0;
+  display: block;
+  line-height: 2.25em;
+  margin-left: 0;
+  padding-left: 0;
+}
