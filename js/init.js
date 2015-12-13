@@ -245,5 +245,27 @@
         }, 100);
       });
     });
+    
+    //Contact form
+    $('.contact form').submit(function(e) {
+      var $form = $(this);
+      var $parent = $form.parent();
+      e.preventDefault();
+      var data = {};
+      $(this).find("input:not([type=hidden]), textarea").each(function() {
+        if($(this).attr('name')) {
+          data[$(this).attr('name')] = $(this).val();
+        }
+      });
+      $form.remove();
+      $parent.addClass('ajax-loading');
+      $.ajax({
+        dataType: 'jsonp',
+        url: "http://getsimpleform.com/messages/ajax?form_api_token=d3e2a680802ad0cee4871234618f4d9e",
+        data: data
+      }).done(function() {
+        $parent.removeClass('ajax-loading').prepend('<div class="thank-you">'+thank_you_text+'</div>');
+      });
+    });
   });
 })(jQuery);

@@ -228,6 +228,10 @@ header {
 .content-type-project h1 {
   float: left; 
 }
+.ajax-loading {
+  background: transparent url('/images/ajax-loader.gif') center center no-repeat;
+  height: 100px;
+}
 
 /* Form */
 
@@ -301,6 +305,7 @@ select {
 
 textarea {
   padding: 0.75em;
+  max-width: 100%;
 }
 
 input[type="checkbox"],
@@ -1176,6 +1181,16 @@ input[type="button"],
     .tags {
       float: right;
       font-weight: bold;
+    }
+  }
+  .contact {
+    .col {
+      margin: 0 0 2em;
+    }
+    form {
+      > * {
+        margin-bottom: 0.5em; 
+      }
     }
   }
 }
