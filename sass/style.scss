@@ -1193,6 +1193,25 @@ input[type="button"],
       }
     }
   }
+  .customers {
+    margin: 0 -10px;
+    * {
+      float: left; 
+    }
+    img {
+      padding: 20px 10px;
+      line-height: 100px;
+    }
+    .group {
+      height: 140px;
+      img {
+        padding: 10px; 
+      }
+    }
+    .cirkor {
+      clear: left; 
+    }
+  }
 }
 .page-project_list #main .projects article {
   margin: 0 0 2em;
