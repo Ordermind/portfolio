@@ -1199,6 +1199,8 @@ input[type="button"],
     }
   }
   .customers {
+    display: inline-block;
+    width: 100%;
     margin: 0 -10px;
     * {
       float: left; 
