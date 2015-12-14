@@ -2,10 +2,10 @@
 <html>
   <head>
     
-      <title>Kepler e-commerce platform - Kristofer Tengström</title>
+      <title>Filemaker integration - Kristofer Tengström</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="E-commerce platform with built-in CMS and a flexible hosting model" />
+    <meta name="description" content="Integration with Filemaker for automatic update of product and orders in a webshop" />
     <meta name="keywords" content="" />
     
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
@@ -23,7 +23,7 @@
     
   </head>
 
-  <body id="top" class="page-kepler">
+  <body id="top" class="page-grufman">
     <!-- Header -->
     <header id="header">
       <img class="image avatar" src="/images/kristofer.jpg" alt="Kristofer Tengström" />
@@ -52,11 +52,11 @@
           
             
               
-                <li><a class="active" href="/en/projects/kepler">English</a></li>
+                <li><a class="active" href="/en/projects/django-filemaker">English</a></li>
               
             
               
-                <li><a href="/projekt/kepler">Svenska</a></li>
+                <li><a href="/projekt/django-filemaker">Svenska</a></li>
               
             
           
@@ -70,42 +70,26 @@
       
 
 <div class="content-wrapper content-type-project">
-  <h1>Kepler e-commerce platform</h1>
+  <h1>Filemaker integration</h1>
   <div class="platforms">
     
       
       
-        <a class="language php" href="/en/projects/?language=PHP" title="View more projects built with PHP"><img src="/images/platforms/php.png" alt="PHP" /></a>
+        <a class="language python" href="/en/projects/?language=Python" title="View more projects built with Python"><img src="/images/platforms/python.png" alt="Python" /></a>
       
     
     
       
       
-        <a class="framework drupal" href="/en/projects/?framework=Drupal" title="View more projects built with Drupal"><img src="/images/platforms/drupal.png" alt="Drupal" /></a>
+        <a class="framework django" href="/en/projects/?framework=Django" title="View more projects built with Django"><img src="/images/platforms/django.png" alt="Django" /></a>
       
     
   </div>
   <div class="content">
     <article>
-      <picture>
-   <source media="(max-width: 480px)" srcset="/images/projects/kepler_small.jpg" />
-   <source media="(max-width: 980px)" srcset="/images/projects/kepler_medium.jpg" />
-   <img src="/images/projects/kepler.jpg" class="fit image" alt="Kepler" />
-</picture>
-<p>Kepler is a Drupal-based e-commerce platform that is used for building and maintaining web shops efficiently. The platform is a hybrid between software-as-a-service and regular, distributed software in that it has a common core that can be maintained and updated centrally but it can also be tailored to great length for each customer. Furthermore, it can be removed from the central hosting environment if a customer for example wishes to host it themselves or if a web shop demands a special hosting environment due to high traffic or other circumstances.</p>
+      <p>A car dealer had an existing web shop built in Python / Django and wanted to integrate it with Filemaker since they wanted to move the administration there. They wanted products and product categories in the Django store to be updated automatically when they were updated in Filemaker, and also when an order was placed in the Django store it should automatically be sent to Filemaker.</p>
 
-<h3 id="features">Features:</h3>
-<ul>
-  <li>Turnkey-style swappable themes</li>
-  <li>Excellent CMS capabilites that allow for a website/webshop hybrid site</li>
-  <li>Automated deployment of new stores</li>
-  <li>Semi-automated updates for bug fixes and new features - build once, deploy everywhere!</li>
-  <li>Developer-friendly. All the parts of Kepler are carefully thought out and put together to make for a smooth experience.</li>
-</ul>
-
-<p>Watch Kepler in action here:<br />
-<a href="https://wilmamorris.com" target="_blank">https://wilmamorris.com</a><br />
-<a href="https://wild-kids.se" target="_blank">https://wild-kids.se</a></p>
+<p>I built the integration in the form of a REST API between Django and Filemaker and used Celery together with Redis to achieve asynchronous calls for better performance.</p>
 
     </article>
   </div>

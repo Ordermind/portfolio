@@ -140,8 +140,35 @@
       $(this).collapsibleOpen();
     }
   };
-  $.fn.filterProjects = function() {
-    var $projects = $(this);
+  $.fn.showProject = function(projects) {
+    var $project = $(this);
+    //Gör bara något om projektet inte är synligt
+    if(!$project.hasClass('visible')) {
+      //Hitta närmaste synliga previous sibling
+      var previous_index = $project.attr('data-index') - 1;
+      var $previous_project = null;
+      while(true) {
+        if(previous_index < 0) {
+          break; 
+        }
+        if(projects[previous_index].hasClass('visible')) {
+          $previous_project = projects[previous_index];
+          break;
+        }
+        previous_index--;
+      }
+      $project.addClass('visible');
+      if(previous_index < 0) {
+        var $parent = $('.projects .row');
+        $parent.prepend($project);
+      }
+      else {
+        $previous_project.after($project);
+      }
+      $project.fadeIn(200);
+    }
+  };
+  $.fn.filterProjects = function(projects, nofade) {
     var $filter_buttons = $('.filters .button');
     var filters = {language: [], framework: []};
     $filter_buttons.each(function() {
@@ -150,31 +177,68 @@
         filters[type_of_filter].push($(this).attr('data-value'));
       }
     });
+    //Sätt history state
+    if(window.history) {
+      var current_url =  window.location.href.split('#')[0].split('?')[0];
+      var query = {};
+      for(var filter_type in filters) {
+        for(var i in filters[filter_type]) {
+          if(query[filter_type] === undefined) {
+            query[filter_type] = [];
+          }
+          query[filter_type].push(filters[filter_type][i]);
+        }
+      }
+      var query_string = "";
+      for(var filter_type in query) {
+        query_string += "&" + filter_type + "=" + query[filter_type].join(','); 
+      }
+      if(query_string) {
+        query_string = "?" + query_string.substring(1);
+      }
+      window.history.replaceState({}, "", current_url + query_string);
+    }
+    //Filtrera projekt
     if(filters.language.length || filters.framework.length) {
-      //Filtrera projekt
-      $projects.each(function() {
-        var $project = $(this);
+      for(var i = 0; i < projects.length; i++) {
+        var $project = projects[i];
         var visible = false;
         loop1:
           for(var filter_type in filters) {
-            for(var i in filters[filter_type]) {
-              if($project.attr('data-'+filter_type) === filters[filter_type][i]) {
-                visible = true;
-                break loop1;
+            for(var j in filters[filter_type]) {
+              var values = $project.attr('data-'+filter_type).split(',');
+              for(var k in values) {
+                var value = values[k];
+                if(value === filters[filter_type][j]) {
+                  visible = true;
+                  break loop1;
+                }
               }
             }
           }
         if(visible) {
-          $project.fadeIn(200); 
+          $project.showProject(projects);
         }
         else {
-          $project.fadeOut(200);
+          if(nofade) {
+            $project.removeClass('visible');
+            $project.hide();
+            $project.remove();
+          }
+          else {
+            $project.fadeOut(200, function() {
+              $(this).removeClass('visible');
+              $(this).remove();
+            });
+          }
         }
-      });
+      }
     }
     else {
       //Visa alla projekt
-      $projects.fadeIn(200);
+      for(var i = 0; i < projects.length; i++) {
+        projects[i].showProject(projects);
+      }
     }
   };
 
@@ -186,65 +250,83 @@
     }
 
     //Project list
-    $('.collapsible > .legend').click(function() {
-      var $content = $(this).siblings('.collapsible-content').first();
-      $content.collapsibleToggle(true);
-    });
-    $('.filters .button').click(function() {
-      var $this = $(this);
-      var filter_value = $this.attr('data-value');
-      var type_of_filter = $this.parent().attr('class').substring(7);
-      var $filters = $this.closest('.filters');
-      var $projects = $('.projects article');
-      $this.toggleClass('special');
-      $projects.filterProjects();
-    });
-    var getUrlVars = function() {
-      var vars = {}, hash;
-      var href = window.location.href.split('#')[0];
-      var hashes = href.slice(href.indexOf('?') + 1).split('&');
-      for(var i = 0; i < hashes.length; i++)
-      {
-        hash = hashes[i].split('=');
-        if(hash[1]) {
-          vars[hash[0]] = hash[1];
+    if($('body').hasClass('page-project_list')) {
+      var projects = [];
+      $('.projects article').each(function(index) {
+        $(this).attr('data-index', index);
+        $(this).addClass('visible');
+        projects[index] = $(this);
+      });
+      $('.collapsible > .legend').click(function() {
+        var $content = $(this).siblings('.collapsible-content').first();
+        $content.collapsibleToggle(true);
+      });
+      $('.filters .button').click(function() {
+        var $this = $(this);
+        var filter_value = $this.attr('data-value');
+        var type_of_filter = $this.parent().attr('class').substring(7);
+        var $filters = $this.closest('.filters');
+        var $projects = $('.projects article');
+        $this.toggleClass('special');
+        $projects.filterProjects(projects);
+      });
+      var getUrlVars = function() {
+        var vars = {}, hash;
+        var href = window.location.href.split('#')[0];
+        var hashes = href.slice(href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+          hash = hashes[i].split('=');
+          if(hash[1]) {
+            vars[hash[0]] = hash[1].split(',');
+          }
+        }
+        return vars;
+      };
+      //Handle GET parameters
+      var current_path = window.location.pathname;
+      if(current_path === '/projekt/' || current_path === '/en/projects/') {
+        var params = getUrlVars();
+        var filtered = false;
+        for(var filter_type in params) {
+          for(var i in params[filter_type]) {
+            var filter = $('.filters .button[data-value=' + params[filter_type][i] + ']');
+            $('.filters .button[data-value=' + params[filter_type][i] + ']').each(function() {
+              var $this = $(this);
+              var filter_value = $this.attr('data-value');
+              var type_of_filter = $this.parent().attr('class').substring(7);
+              var $filters = $this.closest('.filters');
+              var $projects = $('.projects article');
+              $this.toggleClass('special');
+              $projects.filterProjects(projects, true);
+            });
+            filtered = true;
+          }
+        }
+        if(filtered) {
+          //Öppna filterrutan så att det blir tydligt vad som har hänt
+          $('.filters-wrapper').removeClass('collapsed');
         }
       }
-      return vars;
-    };
-    //Handle GET parameters
-    var current_path = window.location.pathname;
-    if(current_path === '/projekt/' || current_path === '/en/projects/') {
-      var params = getUrlVars();
-      var filtered = false;
-      for(var filter_type in params) {
-        var filter = $('.filters .button[data-value=' + params[filter_type] + ']');
-        $('.filters .button[data-value=' + params[filter_type] + ']').click();
-        filtered = true;
-      }
-      if(filtered) {
-        //Öppna filterrutan så att det blir tydligt vad som har hänt
-        $('.filters-wrapper').removeClass('collapsed');
-      }
+      $(window).load(function() {
+        $('.collapsible > .collapsible-content').each(function() { 
+          $(this).collapsibleToggle();
+          $(this).hide();
+          $(this).show();
+          $(this).attr('data-transition-original', 'margin-top 0.2s ease-in-out');
+        });
+      });
+      $(window).resize(function() {
+        $('.collapsible > .collapsible-content').each(function() {
+          var $content = $(this);
+          $content.css('transition', 'none');
+          $content.collapsibleToggle();
+          setTimeout(function() {
+            $content.css('transition', $content.attr('data-transition-original'));
+          }, 100);
+        });
+      });
     }
-    $(window).load(function() {
-      $('.collapsible > .collapsible-content').each(function() { 
-        $(this).collapsibleToggle();
-        $(this).hide();
-        $(this).show();
-        $(this).attr('data-transition-original', 'margin-top 0.2s ease-in-out');
-      });
-    });
-    $(window).resize(function() {
-      $('.collapsible > .collapsible-content').each(function() {
-        var $content = $(this);
-        $content.css('transition', 'none');
-        $content.collapsibleToggle();
-        setTimeout(function() {
-          $content.css('transition', $content.attr('data-transition-original'));
-        }, 100);
-      });
-    });
     
     //Contact form
     $('.contact form').submit(function(e) {

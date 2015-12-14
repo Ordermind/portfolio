@@ -1062,6 +1062,11 @@ input[type="button"],
     a {
       border: 0;
       margin-left: 1em;
+      &.django {
+        img {
+          height: 30px; 
+        }
+      }
     }
   }
   .content {
