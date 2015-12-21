@@ -335,19 +335,31 @@
       e.preventDefault();
       var data = {};
       $(this).find("input:not([type=hidden]), textarea").each(function() {
-        if($(this).attr('name')) {
+        if($(this).attr('name') && $(this).val()) {
           data[$(this).attr('name')] = $(this).val();
         }
       });
       $form.remove();
       $parent.addClass('ajax-loading');
-      $.ajax({
-        dataType: 'jsonp',
-        url: "http://getsimpleform.com/messages/ajax?form_api_token=d3e2a680802ad0cee4871234618f4d9e",
-        data: data
-      }).done(function() {
+      var object_size = function(obj) {
+        var size = 0;
+        for (var key in obj) {
+          if (obj.hasOwnProperty(key)) size++;
+        }
+        return size;
+      }
+      if(object_size(data)) {
+        $.ajax({
+          dataType: 'jsonp',
+          url: "http://getsimpleform.com/messages/ajax?form_api_token=d3e2a680802ad0cee4871234618f4d9e",
+          data: data
+        }).done(function() {
+          $parent.removeClass('ajax-loading').prepend('<div class="thank-you">'+thank_you_text+'</div>');
+        });
+      }
+      else {
         $parent.removeClass('ajax-loading').prepend('<div class="thank-you">'+thank_you_text+'</div>');
-      });
+      }
     });
   });
 })(jQuery);
