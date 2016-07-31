@@ -9,30 +9,30 @@
   padding: 6em 3em 3em 3em;
   width: 30%;
 }
-/* line 19, ../sass/style-large.scss */
+/* line 18, ../sass/style-large.scss */
 #header h1, #header h2 {
   font-size: 1.25em;
 }
-/* line 22, ../sass/style-large.scss */
+/* line 21, ../sass/style-large.scss */
 #header h1 br, #header h2 br {
   display: none;
 }
-/* line 27, ../sass/style-large.scss */
+/* line 26, ../sass/style-large.scss */
 #header .read-more {
   margin-top: 4em;
 }
 
 /* Footer */
-/* line 34, ../sass/style-large.scss */
+/* line 33, ../sass/style-large.scss */
 #footer {
   padding: 0 3em 5em 3em;
   width: 30%;
 }
-/* line 37, ../sass/style-large.scss */
+/* line 36, ../sass/style-large.scss */
 #footer .frameworks {
   display: none;
 }
-/* line 41, ../sass/style-large.scss */
+/* line 40, ../sass/style-large.scss */
 #footer .copyright li {
   border-left-width: 0;
   display: block;
@@ -42,7 +42,7 @@
 }
 
 /* Main */
-/* line 53, ../sass/style-large.scss */
+/* line 52, ../sass/style-large.scss */
 #main {
   margin-left: 30%;
   max-width: none;

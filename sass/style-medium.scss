@@ -41,10 +41,10 @@ ul {
   text-align: center;
   top: auto;
   width: 100%;
-  
+
   h1, h2 {
     font-size: 1.75em;
-    
+
     br {
       display: inline;
     }
@@ -54,6 +54,9 @@ ul {
 /* Footer */
 
 #footer {
+  .frameworks {
+    display: block;
+  }
   background-attachment:  scroll;
   background-color:     $color-accent2-bg;
   background-image:     url('images/overlay.png'),    url('../images/bg.jpg');
@@ -66,10 +69,6 @@ ul {
   position: relative;
   text-align: center;
   width: 100%;
-  
-  .frameworks {
-    display: block; 
-  }
 
   .icons {
     margin: 0 0 ($size-element-margin * 0.5) 0;

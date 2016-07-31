@@ -53,19 +53,19 @@ ul.icons li .icon {
   text-align: center;
   width: 100%;
 }
-/* line 70, ../sass/style-medium.scss */
+/* line 57, ../sass/style-medium.scss */
 #footer .frameworks {
   display: block;
 }
-/* line 74, ../sass/style-medium.scss */
+/* line 73, ../sass/style-medium.scss */
 #footer .icons {
   margin: 0 0 1em 0;
 }
-/* line 78, ../sass/style-medium.scss */
+/* line 77, ../sass/style-medium.scss */
 #footer .copyright {
   margin: 0 0 1em 0;
 }
-/* line 81, ../sass/style-medium.scss */
+/* line 80, ../sass/style-medium.scss */
 #footer .copyright li {
   border-left-width: 1px;
   display: inline-block;
@@ -75,7 +75,7 @@ ul.icons li .icon {
 }
 
 /* Main */
-/* line 93, ../sass/style-medium.scss */
+/* line 92, ../sass/style-medium.scss */
 #main {
   margin: 0;
   padding: 4em;

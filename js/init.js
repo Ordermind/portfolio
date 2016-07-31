@@ -121,7 +121,7 @@
     });
 
   });
-  
+
   $.fn.collapsibleClose = function() {
     $(this).css("margin-top", 0 - $(this).height());
   };
@@ -149,7 +149,7 @@
       var $previous_project = null;
       while(true) {
         if(previous_index < 0) {
-          break; 
+          break;
         }
         if(projects[previous_index].hasClass('visible')) {
           $previous_project = projects[previous_index];
@@ -191,7 +191,7 @@
       }
       var query_string = "";
       for(var filter_type in query) {
-        query_string += "&" + filter_type + "=" + query[filter_type].join(','); 
+        query_string += "&" + filter_type + "=" + query[filter_type].join(',');
       }
       if(query_string) {
         query_string = "?" + query_string.substring(1);
@@ -239,6 +239,22 @@
       for(var i = 0; i < projects.length; i++) {
         projects[i].showProject(projects);
       }
+    }
+  };
+
+  var resizeSidebar = function() {
+    //Hantera padding och höjd osv på största layouten så att elementen inte åker in i varandra.
+    if($('html').attr('class') === 'global xlarge') {
+      var height = $(window).height();
+      if(height < 680) {
+        $('#header').css('padding-top', (height * 8 / 100) + 'px');
+      }
+      else {
+        $('#header').css('padding-top', '');
+      }
+    }
+    else {
+      $('#header').css('padding-top', '');
     }
   };
 
@@ -309,7 +325,7 @@
         }
       }
       $(window).load(function() {
-        $('.collapsible > .collapsible-content').each(function() { 
+        $('.collapsible > .collapsible-content').each(function() {
           $(this).collapsibleToggle();
           $(this).hide();
           $(this).show();
@@ -327,7 +343,7 @@
         });
       });
     }
-    
+
     //Contact form
     $('.contact form').submit(function(e) {
       var $form = $(this);
@@ -361,5 +377,9 @@
         $parent.removeClass('ajax-loading').prepend('<div class="thank-you">'+thank_you_text+'</div>');
       }
     });
+    resizeSidebar();
+  });
+  $(window).resize(function() {
+    resizeSidebar();
   });
 })(jQuery);
