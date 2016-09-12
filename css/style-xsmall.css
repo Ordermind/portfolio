@@ -69,12 +69,27 @@ header.major h2 {
   border-top: 0;
 }
 /* line 85, ../sass/style-xsmall.scss */
+#main .filters-wrapper .filters > div .button {
+  min-width: 7.5em;
+  padding: 0;
+  margin: 5px 7px;
+}
+/* line 90, ../sass/style-xsmall.scss */
 #main .projects .row article {
   width: 100%;
 }
+/* line 93, ../sass/style-xsmall.scss */
+#main .customers {
+  text-align: center;
+}
+/* line 95, ../sass/style-xsmall.scss */
+#main .customers * {
+  float: none;
+  display: inline-block;
+}
 
 /* Footer */
-/* line 94, ../sass/style-xsmall.scss */
+/* line 106, ../sass/style-xsmall.scss */
 #footer .copyright li {
   border-left-width: 0;
   display: block;
