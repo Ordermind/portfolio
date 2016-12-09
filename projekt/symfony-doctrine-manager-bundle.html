@@ -86,13 +86,11 @@
   <div class="content">
     <article>
       <p>Det här är ett bundle för Symfony som löser följande problem vid interaktion med Doctrines repositorier och modeller:</p>
-
-<ul>
+<ul class="red-x">
   <li>Tillgång till servicecontainern saknas i klasser för repositorier och modeller</li>
   <li>Standard saknas för hur man ska injicera repositorier i en service</li>
   <li>Det finns inga events i repositorier som tillåter manipulation av sökresultat</li>
 </ul>
-
 <p>Genom att använda managers för repositorier och modeller får man både ha kakan och äta den eftersom de sistnämnda klasserna förblir rena från servicecontainern precis som det är tänkt, samtidigt som man i praktiken kan använda servicecontainern i managerklasserna i stället. Utöver detta uppmuntras utvecklaren till att följa en vettig standard för injektion av repositorier. Dessutom får man med en hög med events som gör att man kan hantera manipulation av resultat i samband med att man anropar metoder hos modellerna och repositorierna, vilket kan vara smidigt t ex för auktoriseringsändamål.</p>
 
 <p>Både Symfony 2 och 3 stöds, liksom Doctrine ORM och ODM (via MongoDB).</p>

@@ -88,13 +88,11 @@
   <div class="content">
     <article>
       <p>This is a bundle for Symfony that solves the following problems when interacting with Doctrine’s repositories and models:</p>
-
-<ul>
-  <li>There is no access to the service container in classes for repositories and models</li>
-  <li>There is no standard for injecting repositories in a service</li>
-  <li>There are no events in repositories that allow manipulation of search results</li>
+<ul class="red-x">
+<li>There is no access to the service container in classes for repositories and models</li>
+<li>There is no standard for injecting repositories in a service</li>
+<li>There are no events in repositories that allow manipulation of search results</li>
 </ul>
-
 <p>By using managers for repositories and models you have the cake and eat it too, as the latter classes stay clean from the service container just as intended, while you still get access to the service container in the manager classes. Furthermore the developer is encouraged to follow a sensible standard for injection of repositories. You also get a bunch of events that enable you to manipulate the results in direct association with calling the methods on repositories and models, which can be handy for authorization purposes, for example.</p>
 
 <p>Both Symfony 2 and 3 are supported, as are Doctrine ORM and ODM (via MongoDB).</p>

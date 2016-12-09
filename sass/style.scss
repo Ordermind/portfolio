@@ -1090,6 +1090,9 @@ input[type="button"],
 
     ul {
       list-style-image: url('/images/check_mark.png');
+      &.red-x {
+        list-style-image: url('/images/red_x.png');
+      }
       list-style-position: inside;
       padding-left: 0;
       li {
