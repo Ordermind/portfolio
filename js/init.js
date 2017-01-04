@@ -259,8 +259,8 @@
   };
 
   $(document).ready(function() {
-    //Scrolla till #main om man inte är på startsidan
     var current_path = window.location.pathname;
+    //Scrolla till #main om man inte är på startsidan
     if(current_path !== '/' && current_path !== '/en/') {
       $('body').scrollTop($('#main').offset().top);
     }
@@ -300,7 +300,6 @@
         return vars;
       };
       //Handle GET parameters
-      var current_path = window.location.pathname;
       if(current_path === '/projekt/' || current_path === '/en/projects/') {
         var params = getUrlVars();
         var filtered = false;
