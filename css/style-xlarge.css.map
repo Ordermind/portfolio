@@ -1,0 +1,13 @@
+{
+	"version": 3,
+	"file": "style-xlarge.css",
+	"sources": [
+		"../sass/style-xlarge.scss",
+		"../hdr0",
+		"../sass/_vars.scss",
+		"../sass/_mixins.scss",
+		"../compass/css3"
+	],
+	"names": [],
+	"mappings": "AAGA;;;;EAIE;AAEF,WAAW;AAEX,AAAA,IAAI,EAAE,KAAK,EAAE,MAAM,EAAE,QAAQ,CAAC,EAC5B,SAAS,EAAE,IAAI,GAChB;;AAED,YAAY;AAEZ,AAAA,OAAO,CAAC,EACN,WAAW,EAAE,GAAG,GAKjB;;AAND,AAEE,OAFK,CAEL,MAAM,AAAA,OAAO,CAAC,EACZ,MAAM,EAAE,CAAC,CAAC,CAAC,CAAC,GAA4B,EACxC,KAAK,EAAE,GAAG,GACX"
+}

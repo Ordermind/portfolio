@@ -4,88 +4,44 @@
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 /* Basic */
-/* line 14, ../sass/style-small.scss */
-h1 {
-  font-size: 1.5em;
-}
+h1 { font-size: 1.5em; }
 
-/* line 18, ../sass/style-small.scss */
-h2 {
-  font-size: 1.2em;
-}
+h2 { font-size: 1.2em; }
 
-/* line 22, ../sass/style-small.scss */
-h3 {
-  font-size: 1em;
-}
+h3 { font-size: 1em; }
 
 /* Section/Article */
-/* line 29, ../sass/style-small.scss */
-section.special, article.special {
-  text-align: center;
-}
+section.special, article.special { text-align: center; }
 
-/* line 36, ../sass/style-small.scss */
-header.major h2 {
-  font-size: 1.35em;
-}
+header.major h2 { font-size: 1.35em; }
 
 /* List */
-/* line 46, ../sass/style-small.scss */
-ul.labeled-icons li {
-  padding-left: 2em;
-}
-/* line 49, ../sass/style-small.scss */
-ul.labeled-icons li h3 {
-  line-height: 1.75em;
-}
+ul.labeled-icons li { padding-left: 2em; }
+
+ul.labeled-icons li h3 { line-height: 1.75em; }
 
 /* Header */
-/* line 58, ../sass/style-small.scss */
-#header {
-  padding: 2.25em 1.5em;
-}
-/* line 61, ../sass/style-small.scss */
-#header h1, #header h2 {
-  font-size: 1.35em;
-}
+#header { padding: 2.25em 1.5em; }
+
+#header h1, #header h2 { font-size: 1.35em; }
 
 /* Footer */
-/* line 68, ../sass/style-small.scss */
-#footer {
-  padding: 2.25em 1.5em;
-}
+#footer { padding: 2.25em 1.5em; }
 
 /* Main */
-/* line 74, ../sass/style-small.scss */
-#main {
-  padding: 2.25em 1.5em 0.25em 1.5em;
-}
-/* line 77, ../sass/style-small.scss */
-#main > section {
-  margin: 2.25em 0 0 0;
-  padding: 2.25em 0 0 0;
-}
-/* line 81, ../sass/style-small.scss */
-#main .projects .row article {
-  width: 50%;
-}
-/* line 83, ../sass/style-small.scss */
-#main .projects .row article:nth-child(3n+1) {
-  clear: none;
-}
-/* line 86, ../sass/style-small.scss */
-#main .projects .row article:nth-child(2n+1) {
-  clear: left;
-}
+#main { padding: 2.25em 1.5em 0.25em 1.5em; }
+
+#main > section { margin: 2.25em 0 0 0; padding: 2.25em 0 0 0; }
+
+#main .projects .row article { width: 50%; }
+
+#main .projects .row article:nth-child(3n+1) { clear: none; }
+
+#main .projects .row article:nth-child(2n+1) { clear: left; }
 
 /* Poptrox */
-/* line 94, ../sass/style-small.scss */
-.poptrox-popup {
-  border-radius: 0;
-}
-/* line 99, ../sass/style-small.scss */
-.poptrox-popup .nav-next:before,
-.poptrox-popup .nav-previous:before {
-  margin-top: -1em;
-}
+.poptrox-popup { border-radius: 0; }
+
+.poptrox-popup .nav-next:before, .poptrox-popup .nav-previous:before { margin-top: -1em; }
+
+/*# sourceMappingURL=style-small.css.map */
