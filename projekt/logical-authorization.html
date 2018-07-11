@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     
-      <title>Logical Permissions - Kristofer Tengström</title>
+      <title>Logical Authorization - Kristofer Tengström</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Library in multiple languages for flexible permissions with support for logic gates" />
+    <meta name="description" content="Auktoriseringssystem i Symfony som integrerar mitt behörighetsbibliotek" />
     <meta name="keywords" content="" />
     
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
@@ -25,21 +25,20 @@
     
   </head>
 
-  <body id="top" class="page-lp">
+  <body id="top" class="page-la">
     <!-- Header -->
     <header id="header">
       <img class="image avatar" src="/images/kristofer.jpg" alt="Kristofer Tengström" />
 <h2>Kristofer Tengström</h2>
-<div class="slogan">Full stack developer with e-commerce specialization</div>
+<div class="slogan">Fullstackutvecklare med specialisering inom e-handel</div>
 <div class="buttons">
   
   
-  <a class="read-more button" href="/en/about-me">Read more about me</a>
+  <a class="read-more button" href="/om-mig">Läs mer om mig</a>
   
   
-  <a class="contact button special" href="/en/contact">Get in touch</a>
+  <a class="contact button special" href="/kontakt">Kontakta mig</a>
 </div>
-
 
     </header>
     <!-- Main -->
@@ -54,51 +53,44 @@
           
             
               
-                <li><a class="active" href="/en/projects/logical-permissions">English</a></li>
+                <li><a href="/en/projects/logical-authorization">English</a></li>
               
             
               
-                <li><a href="/projekt/logical-permissions">Svenska</a></li>
+                <li><a class="active" href="/projekt/logical-authorization">Svenska</a></li>
               
             
           
         </ul>
         <ul class="breadcrumbs">
           
-            <li><a href="/en/">Home</a></li>
+            <li><a href="/">Hem</a></li>
           
         </ul>
       </div>
       
 
 <div class="content-wrapper content-type-project">
-  <h1>Logical Permissions</h1>
+  <h1>Logical Authorization</h1>
   <div class="platforms">
     
       
       
-        <a class="language python" href="/en/projects/?language=Python" title="View more projects built with Python"><img src="/images/platforms/python.png" alt="Python" /></a>
-      
-        <a class="language javascript" href="/en/projects/?language=Javascript" title="View more projects built with Javascript"><img src="/images/platforms/javascript.png" alt="Javascript" /></a>
-      
-        <a class="language php" href="/en/projects/?language=PHP" title="View more projects built with PHP"><img src="/images/platforms/php.png" alt="PHP" /></a>
-      
-        <a class="language go" href="/en/projects/?language=Go" title="View more projects built with Go"><img src="/images/platforms/go.png" alt="Go" /></a>
+        <a class="language php" href="/projekt/?language=PHP" title="Visa fler projekt byggda i PHP"><img src="/images/platforms/php.png" alt="PHP" /></a>
       
     
+    
+      
+      
+        <a class="framework symfony" href="/projekt/?framework=Symfony" title="Visa fler projekt byggda i Symfony"><img src="/images/platforms/symfony.png" alt="Symfony" /></a>
+      
     
   </div>
   <div class="content">
     <article>
-      <p>During my time as a developer I’ve seen a need for better permission models in practically every framework and CMS I’ve worked with. Therefore I have created a permission model of my own to fill that need. Among its features is support for logic gates which makes it possible to piece together combinations of permissions in an elegant way.</p>
+      <p>Jag har gjort en serie plugins till Symfony som integrerar <a href="/projekt/logical-permissions">mitt behörighetsbibliotek</a> för att skapa en mer flexibel, smidig och konsekvent upplevelse för utvecklare. Ett exempel på en funktion som kan vara väldigt användbar är möjligheten att exportera alla behörigheter på ett enkelt sätt så att de även kan användas på klientsidan.</p>
 
-<p>Since this need transcends language barriers I have created multiple versions of the library. One can then integrate it in frameworks that are written in these languages. The library is open source and free of charge to use.</p>
-
-<p>Links to the different versions:  
-<a href="https://packagist.org/packages/ordermind/logical-permissions" target="_blank">PHP</a>  
-<a href="https://www.npmjs.com/package/logical-permissions" target="_blank">Javascript (Node.js)</a>  
-<a href="https://pypi.python.org/pypi/logical-permissions" target="_blank">Python</a>  
-<a href="https://github.com/ordermind/logical-permissions-go" target="_blank">Go</a></p>
+<p>Läs mer här: <a href="https://github.com/ordermind/symfony-logical-authorization-bundle" target="_blank">https://github.com/ordermind/symfony-logical-authorization-bundle</a></p>
 
     </article>
   </div>
@@ -112,17 +104,17 @@
   
   
   <li class="drupal">
-    <a href="/en/projects/?framework=Drupal" title="View my Drupal projects">
+    <a href="/projekt/?framework=Drupal" title="Visa mina Drupalprojekt">
       <img src="/images/platforms/drupal.png" alt="Drupal" />
     </a>
   </li>
   <li class="symfony">
-    <a href="/en/projects/?framework=Symfony" title="View my Symfony projects">
+    <a href="/projekt/?framework=Symfony" title="Visa mina Symfonyprojekt">
       <img src="/images/platforms/symfony_white.png" alt="Symfony" />
     </a>
   </li>
   <li class="django">
-    <a href="/en/projects/?framework=Django" title="View my Django projects">
+    <a href="/projekt/?framework=Django" title="Visa mina Djangoprojekt">
       <img src="/images/platforms/django.png" alt="Django" />
     </a>
   </li>
@@ -160,7 +152,7 @@
 
   
   <li>
-  <a href="mailto:Kristofer Tengström <info@kristofer-tengstrom.se>" class="icon fa-envelope-o" title="Send me an e-mail!">
+  <a href="mailto:Kristofer Tengström <info@kristofer-tengstrom.se>" class="icon fa-envelope-o" title="Skicka ett e-mail!">
     <span class="label">Email</span>
   </a>
   </li>
@@ -169,7 +161,6 @@
 <ul class="copyright">
   <li>&copy; Kristofer Tengström</li>
 </ul>
-
 
     </footer>
   </body>
